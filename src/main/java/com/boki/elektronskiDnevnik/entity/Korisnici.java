@@ -1,14 +1,17 @@
 package com.boki.elektronskiDnevnik.entity;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.OneToOne;
+import javax.persistence.CascadeType;
 
 @Data
 @AllArgsConstructor
@@ -29,7 +32,7 @@ public class Korisnici {
     @OneToOne (mappedBy = "korisnici")
     private Autorizacija autorizacija;
     
-    @OneToOne (cascade = CascadeType.All)
+    @OneToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "odeljenja_idodeljenja", referencedColumnName = "idodeljenja")
     private Odeljenja odeljenja;
      

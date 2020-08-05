@@ -1,10 +1,12 @@
 package com.boki.elektronskiDnevnik.entity;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -40,7 +42,7 @@ public class Ocene {
     @Column (name = "zakljucna-ocena")
     private int zakljucna_ocena;
     
-    @OneToOne (cascade = CascadeType.All)
+    @OneToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "predmeti_idpredmeti", referencedColumnName = "idpredmeti")
     private Predmeti ocene_predmeti;
 }

@@ -28,7 +28,7 @@ public class Rasporedi {
     @OneToOne (mappedBy = "rasporedi_odeljenja")
     private Odeljenja odeljenja;
     
-    @OnetToOne (mappedBy = "rasporedi_dani")
+    @OneToOne (mappedBy = "rasporedi_dani")
     private Dani dani;
     
     @OneToOne (mappedBy = "rasporedi_predmeti" )
