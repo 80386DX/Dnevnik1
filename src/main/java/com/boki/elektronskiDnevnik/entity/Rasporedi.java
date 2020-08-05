@@ -14,23 +14,20 @@ import javax.persistence.OneToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "odeljenja")
-public class Odeljenja {
+@Table (name = "rasporedi")
+public class Rasporedi {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idodeljenja")
-    private int id_odeljenja;
+    @Column(name = "idrasporedi")
+    private int id_rasporedi;
     
-    @Column (name = "ime-odeljenja")
-    private String ime_odeljenja;
-            
-    @OneToOne (mappedBy = "odeljenja" )
-    private Korisnici korisnici;
+    @Column (name = "ime-rasporeda")
+    private String ime_rasporeda;
     
-    @OneToOne (cascade = CascadeType.All)
-    @JoinColumn(name = "rasporedi_idrasporedi", referencedColumnName = "idrasporedi")
-    private Rasporedi rasporedi;
+    @OneToOne (mappedBy = "rasporedi")
+    private Odeljenja odeljenja;
+    
     
     
 }
