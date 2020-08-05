@@ -5,27 +5,31 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import javax.persistence.OneToOne;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table (name = "dani")
-public class Dani {
+@Table (name = "predmeti")
+public class Predmeti {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "iddani")
-    private int id_dan;
+    @Column(name = "idpredmeti")
+    private int id_predmeti;
     
-    @Column (name = "ime")
-    private String ime;
+    @Column(name = "ime-predmeta")
+    private String ime_predmeta;
     
-    @OneToOne (cascade = CascadeType.ALL)
+    @OneToOne (cascade = CascadeType.All)
     @JoinColumn(name = "rasporedi_idrasporedi", referencedColumnName = "idrasporedi")
-    private Rasporedi rasporedi_dani;
+    private Rasporedi rasporedi_predmeti;
+    
+    @OneToOne (mappedBy = "ocene_predmeti")
+    private Ocene ocene;
+    
 }

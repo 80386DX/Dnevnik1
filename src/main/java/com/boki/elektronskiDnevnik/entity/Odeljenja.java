@@ -30,7 +30,7 @@ public class Odeljenja {
     
     @OneToOne (cascade = CascadeType.All)
     @JoinColumn(name = "rasporedi_idrasporedi", referencedColumnName = "idrasporedi")
-    private Rasporedi rasporedi;
+    private Rasporedi rasporedi_odeljenja;
     
     
 }

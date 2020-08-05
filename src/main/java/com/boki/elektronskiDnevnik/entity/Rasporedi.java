@@ -25,8 +25,14 @@ public class Rasporedi {
     @Column (name = "ime-rasporeda")
     private String ime_rasporeda;
     
-    @OneToOne (mappedBy = "rasporedi")
+    @OneToOne (mappedBy = "rasporedi_odeljenja")
     private Odeljenja odeljenja;
+    
+    @OnetToOne (mappedBy = "rasporedi_dani")
+    private Dani dani;
+    
+    @OneToOne (mappedBy = "rasporedi_predmeti" )
+    private Predmeti predmeti;
     
     
     
