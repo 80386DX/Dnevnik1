@@ -4,4 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface KorisniciRepo extends JpaRepository <Korisnici, Integer> {
     
+    
 }
