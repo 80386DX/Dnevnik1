@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class KorisniciService {
     
-    @Autowired
+    //@Autowired
     KorisniciRepo repo;
     
-     
     public List<Korisnici> listAll() {
         return repo.findAll();
     }
