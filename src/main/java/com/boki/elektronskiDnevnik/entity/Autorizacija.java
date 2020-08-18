@@ -24,7 +24,7 @@ public class Autorizacija {
     @Column(name = "idautorizacija")
     private int id_autorizacija;
     
-    @Column (name = "rang")
+    @Column (name = "rang", nullable = false, unique = true)
     private String rang;
     
     @OneToOne (cascade = CascadeType.ALL)

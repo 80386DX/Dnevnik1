@@ -25,7 +25,7 @@ public class Odeljenja {
     @Column(name = "idodeljenja")
     private int id_odeljenja;
     
-    @Column (name = "ime-odeljenja")
+    @Column (name = "ime-odeljenja", nullable = false)
     private String ime_odeljenja;
             
     @OneToOne (mappedBy = "odeljenja" )

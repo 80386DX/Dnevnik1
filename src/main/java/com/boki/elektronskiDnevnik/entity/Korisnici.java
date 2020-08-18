@@ -24,9 +24,14 @@ public class Korisnici {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idkorisnici")
     private int id_korisnici;
-    
+  
+    @Column(nullable = false)
     private String ime;
+    
+    @Column(nullable = false)
     private String prezime;
+    
+    @Column(nullable = false)
     private String sifra;
     
     @OneToOne (mappedBy = "korisnici")

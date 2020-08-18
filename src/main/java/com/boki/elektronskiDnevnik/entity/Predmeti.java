@@ -24,7 +24,7 @@ public class Predmeti {
     @Column(name = "idpredmeti")
     private int id_predmeti;
     
-    @Column(name = "ime-predmeta")
+    @Column(name = "ime-predmeta", nullable = false)
     private String ime_predmeta;
     
     @OneToOne (cascade = CascadeType.ALL)

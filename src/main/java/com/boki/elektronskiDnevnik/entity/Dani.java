@@ -24,7 +24,7 @@ public class Dani {
     @Column(name = "iddani")
     private int id_dan;
     
-    @Column (name = "ime")
+    @Column (name = "ime", nullable = false)
     private String ime;
     
     @OneToOne (cascade = CascadeType.ALL)
