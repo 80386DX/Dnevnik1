@@ -16,16 +16,17 @@ public class KorisniciService {
         return repo.findAll();
     }
     
-    public void save(Korisnici korisnik){
+    public void saveKorisnik(Korisnici korisnik){
         repo.save(korisnik);
     }
     
-    public void getById (Integer id){
+    public void getKorisnikById (Integer id){
         repo.findById(id);
     }
     
-    public void delete(Integer id){
+    public void deleteKorisnik(Integer id){
         repo.deleteById(id);
     }
+ 
     
 }
