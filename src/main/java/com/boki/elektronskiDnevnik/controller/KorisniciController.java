@@ -5,6 +5,7 @@ import com.boki.elektronskiDnevnik.exception.ResourceNotFoundException;
 import com.boki.elektronskiDnevnik.repository.KorisniciRepo;
 import com.boki.elektronskiDnevnik.service.KorisniciService;
 import java.util.List;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,12 +28,21 @@ public class KorisniciController {
     /*
     @GetMapping("/{id}")
     public Korisnici getKorisnikById (@PathVariable (value = "id")Integer id_korisnici){
-        return service.getKorisnikById(id_korisnici).oeElseThrow(()->new ResourceNotFoundException("Nije pronadjen :" + id_korisnici);
+        if(!id_korisnici = isPresent())
+        return repo.getOne(id_korisnici)
+                
+                //.orElseThrow(()-> new ResourceNotFoundException("Ne postoji :" +id_korisnici));
     }
-    */
+*/
+    
     @PostMapping
     public  Korisnici createUser(@RequestBody Korisnici korisnik) {
         return repo.save(korisnik);
     }
+    
+    @DeleteMapping("/{id}")
+	public void deleteUser(@PathVariable Integer id) {
+		service.deleteKorisnik(id);
+	}
 
 }
