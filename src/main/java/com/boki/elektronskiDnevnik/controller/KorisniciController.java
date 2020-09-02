@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class KorisniciController {
     
     KorisniciService service;
-    KorisniciRepo repo;
+   // KorisniciRepo repo;
     
     @GetMapping
     public List < Korisnici > getAllUsers() {
@@ -34,10 +34,15 @@ public class KorisniciController {
                 //.orElseThrow(()-> new ResourceNotFoundException("Ne postoji :" +id_korisnici));
     }
 */
+    @GetMapping("/{id}")
+    public Korisnici getUserById(@PathVariable Integer id){
+        return service.getKorisnikById(id);
+    }
+   
     
     @PostMapping
     public  Korisnici createUser(@RequestBody Korisnici korisnik) {
-        return repo.save(korisnik);
+        return service.saveKorisnik(korisnik);
     }
     
     @DeleteMapping("/{id}")

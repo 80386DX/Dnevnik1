@@ -17,12 +17,12 @@ public class KorisniciService {
         return repo.findAll();
     }
     
-    public void saveKorisnik(Korisnici korisnik){
-        repo.save(korisnik);
+    public Korisnici saveKorisnik(Korisnici korisnik){
+      return  repo.save(korisnik);
     }
     
-    public void getKorisnikById (Integer id){
-        repo.findById(id);
+    public Korisnici getKorisnikById (Integer id){
+      return  repo.findById(id).get();
     }
     
     public void deleteKorisnik(Integer id){
