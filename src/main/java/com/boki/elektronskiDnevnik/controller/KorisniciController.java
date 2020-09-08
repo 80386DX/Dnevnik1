@@ -2,7 +2,6 @@ package com.boki.elektronskiDnevnik.controller;
 
 import com.boki.elektronskiDnevnik.entity.Korisnici;
 import com.boki.elektronskiDnevnik.exception.ResourceNotFoundException;
-import com.boki.elektronskiDnevnik.repository.KorisniciRepo;
 import com.boki.elektronskiDnevnik.service.KorisniciService;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
